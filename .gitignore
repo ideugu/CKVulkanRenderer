@@ -1,0 +1,5 @@
+/Source/Player/Res/*.aps
+/Project
+/Output
+glfw
+vulkan
