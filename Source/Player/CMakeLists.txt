@@ -77,6 +77,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/ThirdParty/glfw/include
     ${RUNTIME_MODULE_DIR}/Math/Public
     ${RUNTIME_MODULE_DIR}/Engine/Public
+    ${RUNTIME_MODULE_DIR}/Renderer/Public
 	)
 
 
@@ -132,9 +133,9 @@ ENDIF(MSVC)
 ENDIF(WIN32)
 
 IF(WIN32)
-	target_link_libraries(${PROJECT_NAME} MathModule EngineModule ${Vulkan_LIBRARY} ${Glfw_LIBRARY})
+	target_link_libraries(${PROJECT_NAME} MathModule EngineModule RendererModule ${Vulkan_LIBRARY} ${Glfw_LIBRARY})
 ELSEIF(APPLE)
-	target_link_libraries(${PROJECT_NAME} MathModule EngineModule ${Vulkan_LIBRARY} ${Glfw_LIBRARY} "-framework AppKit" "-framework QuartzCore")
+	target_link_libraries(${PROJECT_NAME} MathModule EngineModule RendererModule ${Vulkan_LIBRARY} ${Glfw_LIBRARY} "-framework AppKit" "-framework QuartzCore")
 ELSE(WIN32)
-	target_link_libraries(${PROJECT_NAME} MathModule EngineModule ${Vulkan_LIBRARY} ${Glfw_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
+	target_link_libraries(${PROJECT_NAME} MathModule EngineModule RendererModule ${Vulkan_LIBRARY} ${Glfw_LIBRARY} ${CMAKE_THREAD_LIBS_INIT})
 ENDIF(WIN32)

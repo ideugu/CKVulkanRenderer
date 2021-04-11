@@ -28,14 +28,16 @@ endif()
 
 add_subdirectory(Source/Runtime/Math)
 add_subdirectory(Source/Runtime/Engine)
+add_subdirectory(Source/Runtime/Renderer)
 add_subdirectory(Source/Player)
 
 ################################################################################
 # Definitions
 ################################################################################
 target_compile_definitions(VulkanPlayer PUBLIC ${PLATFORM_DEFINITION} ${PLATFORM_FOLDER})
-target_compile_definitions(EngineModule PUBLIC ${PLATFORM_DEFINITION} ${PLATFORM_FOLDER})
 target_compile_definitions(MathModule PUBLIC ${PLATFORM_DEFINITION} ${PLATFORM_FOLDER})
+target_compile_definitions(EngineModule PUBLIC ${PLATFORM_DEFINITION} ${PLATFORM_FOLDER})
+target_compile_definitions(RendererModule PUBLIC ${PLATFORM_DEFINITION} ${PLATFORM_FOLDER})
 
 ################################################################################
 # Solution Setting
